@@ -2,7 +2,8 @@
 
 @foreach (var p in Model.Products)
 {
-    <div class="well">
+    @Html.Partial("ProductSummary", p)
+    @*<div class="well">
         <h3>
             <strong>@p.Name</strong>
             <span class="pull-right label label-primary">
@@ -10,7 +11,7 @@
             </span>
         </h3>
        <span class="lead">@p.Description</span>        
-    </div>
+    </div>*@
 }
 
 @*Adding the pagination links in the list.cstml file*@
