@@ -3,7 +3,7 @@
 
 namespace SportsStore.Models
 {
-    interface IOrderRepository
+    public interface IOrderRepository
     {
         IEnumerable<Order> Orders { get; }
         void SaveOrder(Order order);

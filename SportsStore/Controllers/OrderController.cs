@@ -10,8 +10,8 @@ namespace SportsStore.Controllers
         private IOrderRepository repository;
         private Cart cart;
 
-        // constructor public in source code?  Causes error when used here though due to private fields above.
-        private OrderController(IOrderRepository repoService,
+        // constructor public in source code?  needed to process cart; error was coming from not designating IOrderRepository as public so build was using default internal state.
+        public OrderController(IOrderRepository repoService,
             Cart cartService)
         {
             repository = repoService;
