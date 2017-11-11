@@ -18,6 +18,7 @@ namespace SportsStore.Controllers
             cart = cartService;
         }
 
+        // Displays list of unshipped orders to administrator
         public ViewResult List() => View(repository.Orders.Where(o => !o.Shipped));
 
         [HttpPost]

@@ -8,11 +8,14 @@
 @if (Model.Count() > 0)
 {
     <table class="table table-bordered table-striped">
-        <tr><th>Name</th><th>Zip</th colspan="2"><th>Details</th><th></th></tr>
+        <tr><th>Name</th><th>Zip</th><th colspan="2">Details</th><th></th></tr>
         @foreach(Order o in Model)
         {
             <tr>
-                <td>@o.Name</td><td>@o.Zip</td><th>Product</th><th>Quantity</th>
+                <td>@o.Name</td>
+                <td>@o.Zip</td>
+                <th>Product</th>
+                <th>Quantity</th>
                 <td>
                     <form asp-action="MarkShipped" method="post">
                         <input type="hidden" name="orderId" value="@o.OrderID" />
@@ -26,7 +29,8 @@
             {
                 <tr>
                     <td colspan="2"></td>
-                    <td>@line.Product.Name</td><td>@line.Quantity</td>
+                    <td>@line.Product.Name</td>
+                    <td>@line.Quantity</td>
                     <td></td>
                 </tr>
 
