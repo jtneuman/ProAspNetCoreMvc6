@@ -28,7 +28,7 @@ namespace SportsStore.Tests
 
             // Action
             Product[] result =
-                GetViewModel<IEnumerable<Product>>(target.Index())?.ToArrya();
+                GetViewModel<IEnumerable<Product>>(target.Index())?.ToArray();
 
             // Assert
             Assert.Equal(3, result.Length);
