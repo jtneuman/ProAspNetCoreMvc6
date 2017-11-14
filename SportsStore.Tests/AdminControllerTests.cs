@@ -41,5 +41,31 @@ namespace SportsStore.Tests
         {
             return (result as ViewResult)?.ViewData.Model as T;
         }
+
+        [Fact]
+        public void Can_Edit_Product()
+        {
+            // Arrange - create the mock repo
+            Mock<IProductRepository> mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[]
+            {
+                new Product{ProductID = 1, Name = "P1"},
+                new Product{ProductID = 1, Name = "P2"},
+                new Product{ProductID = 1, Name = "P3"},
+            });
+
+            // Arrange - create the controller
+            AdminController target = new AdminController(mock.Object);
+
+            // Act
+            Product p1 = GetViewModel<Product>(target.Edit(1));
+            Product p2 = GetViewModel<Product>(target.Edit(2));
+            Product p3 = GetViewModel<Product>(target.Edit(3));
+
+            // Assert
+            Assert.Equal(1, p1.ProductID);
+            Assert.Equal(2, p2.ProductID);
+            Assert.Equal(3, p3.ProductID);
+        }
     }
 }
