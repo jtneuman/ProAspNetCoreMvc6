@@ -35,7 +35,9 @@ namespace SportsStore.Controllers
                 // there is something wrong with the data values
                 return View(product);
             }
-        }
+        } // end Edit post method
+
+        public ViewResult Create() => View("Edit", new Product());
 
     }
 }

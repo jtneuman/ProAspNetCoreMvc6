@@ -3,6 +3,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "3.3.6",
-    "fontawesome": "4.7.0"
+    "fontawesome": "4.7.0",
+    "jquery": "3.2.1",
+    "juery-validation": "1.15.0",
+    "juery-validation-unobtrusive": "3.2.6"
   }
 }
